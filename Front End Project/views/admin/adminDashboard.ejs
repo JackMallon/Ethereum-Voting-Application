@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title><%= title %></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="/admin">Admin</h1>
+				<nav id="nav">
+					<ul>
+            <li><a href="/admin">Upcoming</a></li>
+						<li><a href="/admin/past-elections">Past Elections</a></li>
+						<li><a href="/admin/new">New Election</a></li>
+						<li><a href="/admin/new-candidate">New Candidate</a></li>
+						<li><a href="/logout" class="button">Log Out</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Banner -->
+			<section id="banner">
+        <img class="main-logo" src="/images/TUDLogo.png">
+        <ul class="actions special">
+        </ul>
+			</section>
+
+			<!-- Main -->
+			<section id="main" class="container" style="height: 60%;">
+				<section class="box special elections-top-margin">
+					<div id="header-box" style="margin-bottom: 1em;">
+						<header class="major">
+							<h2 style="font-weight: 500;">Upcoming Elections</h2>
+						</header>
+					</div>
+					<% for (var i = 0; i < elections.length; i++) { %>
+						<div id="election-box">
+								<h4 style="font-weight: 500;"><%= elections[i].title %></h4>
+								<p><span style="font-weight: 500;">Candidates:</span>
+									<% for (var x = 0; x < candidates.length; x++) { %>
+										<%if (candidates[x].electionId == elections[i].id) { %>
+											<%= candidates[x].name %>,
+										<% } %>
+									<% } %>
+								</p>
+								<p><span style="font-weight: 500;">Closing Date: </span><%= elections[i].closingDate %></p>
+						</div>
+					<% } %>
+					<div class="bottom-margin" style="margin-bottom: -7em;"></div>
+				</section>
+			</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="copyright">
+					<li>Jack Mallon</li><li>B00096918</a></li>
+				</ul>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

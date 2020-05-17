@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <!-- Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="stylesheets/login.css">
+    </head>
+    <body>
+
+    <header id="header" class="alt">
+        <nav id="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Upcoming</a></li>
+                <li><a href="/sign-in" class="button">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="limiter">
+      <div class="container-login100">
+        <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+
+          <form class="login100-form validate-form flex-sb flex-w" action="/login" method="POST">
+            <span class="login100-form-title p-b-32">Login</span>
+                <span class="txt1 p-b-11" style="width: 100%;"><%= req.flash('error') %><br></span>
+
+                <span class="txt1 p-b-11">Username</span>
+                <div class="wrap-input100 validate-input m-b-36" data-validate="Username is required">
+                <input class="input100" input name="username" id="inputUsername" autofocus><span class="focus-input100"></span>
+                </div>
+
+            <span class="txt1 p-b-11">Password</span>
+            <div class="wrap-input100 validate-input m-b-12" data-validate="Password is required">
+              <input class="input100" type="password" name="password" id="inputPassword"><span class="focus-input100"></span>
+            </div>
+
+            <div class="container-login100-form-btn"><button class="login100-form-btn" type="submit" style="margin-top: 20px;">Login</button></div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
